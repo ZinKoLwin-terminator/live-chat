@@ -24,7 +24,9 @@ export default {
             let resp = await auth.createUserWithEmailAndPassword(email.value, password.value);
                if (!resp) {
                    throw new Error("could not create new user");
-            }
+               }
+               resp.user.updateProfile({ displayName: displayName.value })
+               console.log((resp.user));
            } catch (err) {
                error.value = err.message;
                console.log(error.value);
