@@ -1,6 +1,6 @@
 const { ref } = require("vue");
 import {auth} from "../firebase/config";
-let error=ref(null);
+let error=ref("");
 
 let signIn=async(email,password)=>{
     try{
@@ -10,7 +10,7 @@ let signIn=async(email,password)=>{
           }
           return res;
      }catch(err){
-        error.value=err.message
+        error.value = err.message;
         console.log(error.value);
      }
 }
