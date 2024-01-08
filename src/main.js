@@ -7,7 +7,7 @@ let app;
 
 auth.onAuthStateChanged(() => {
     if (!app) {
-        qpp = createApp(App).use(router).mount('#app');
+        app = createApp(App).use(router).mount('#app');
         
     }
 })
